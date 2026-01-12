@@ -11,7 +11,7 @@ namespace Reminder
 {
     public partial class MainFrm : Form
     {
-        WorkFrm wrkFrm;
+        WorkFrm? wrkFrm;
         public MainFrm()
         {
             InitializeComponent();

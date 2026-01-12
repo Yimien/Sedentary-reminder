@@ -13,22 +13,21 @@ namespace Reminder
 {
     public partial class RestFrm : Form
     {
-        private int rst_m;
+        private int rst_m;//总秒数
         private int wrk_m;
-        private int rst_m2;
+        private int rst_m2;//备份总秒数
         private bool input_flag;
-        int rst_s = 0;
-        
+
         public RestFrm()
         {
             InitializeComponent();
         }
-        public RestFrm(int rst_minutes,int wrk_minutes, bool input_flag)
+        public RestFrm(int rst_seconds,int wrk_minutes, bool input_flag)
         {
             InitializeComponent();
-            this.rst_m = rst_minutes;
+            this.rst_m = rst_seconds;
             this.wrk_m = wrk_minutes;
-            this.rst_m2 = rst_minutes;
+            this.rst_m2 = rst_seconds;
             this.input_flag = input_flag;
         }
         
@@ -55,23 +54,26 @@ namespace Reminder
                 KeyboardBlocker.off();//锁定键盘               
             }
 
-            if (rst_s >= 10)
+            // 计算分钟和秒
+            int minutes = rst_m / 60;
+            int seconds = rst_m % 60;
+
+            if (seconds >= 10)
             {
-                lbl_seconds.Text = rst_s.ToString();
+                lbl_seconds.Text = seconds.ToString();
             }
             else
             {
-                lbl_seconds.Text = "0"+rst_s.ToString();
+                lbl_seconds.Text = "0" + seconds.ToString();
             }
 
-
-            if (rst_m >= 10)
+            if (minutes >= 10)
             {
-                lbl_minutes.Text = rst_m.ToString();
+                lbl_minutes.Text = minutes.ToString();
             }
             else
             {
-                lbl_minutes.Text = "0" + rst_m.ToString();
+                lbl_minutes.Text = "0" + minutes.ToString();
             }
             
             
@@ -85,51 +87,42 @@ namespace Reminder
 
         private void timing()
         {
-            if (rst_s > 0)
+            rst_m--;
+
+            // 计算并更新显示分钟和秒
+            int minutes = rst_m / 60;
+            int seconds = rst_m % 60;
+
+            if (seconds >= 10)
             {
-                rst_s = rst_s - 1;
-                if (rst_s >= 10)
-                {
-                    lbl_seconds.Text = rst_s.ToString();
-                }
-                else
-                {
-                    lbl_seconds.Text = "0"+rst_s.ToString();
-                }
-                
+                lbl_seconds.Text = seconds.ToString();
             }
-            else //秒=0时，分钟-1
+            else
+            {
+                lbl_seconds.Text = "0" + seconds.ToString();
+            }
+
+            if (minutes >= 10)
+            {
+                lbl_minutes.Text = minutes.ToString();
+            }
+            else
+            {
+                lbl_minutes.Text = "0" + minutes.ToString();
+            }
+
+            if (rst_m <= 0)
             {
                 timerRst.Enabled = false;
-                rst_m--;
-                if (rst_m>=10) {
-                    lbl_minutes.Text = rst_m.ToString();
-                }
-                else
-                {
-                    lbl_minutes.Text = "0"+rst_m.ToString();
-                }
-                
-                if (rst_m > -1) //若分钟不为0，秒回到60，继续递归
-                {
-                    timerRst.Enabled = true;
-                    rst_s = 59;
-                    timing();
-                }
-                else
-                {                    
-                    if (input_flag)
-                    {                       
-                        KeyboardBlocker.on();//解锁键盘
-                    }
 
-                    if (rst_s == 0)
-                    {
-                        WorkFrm workFrm = new WorkFrm(wrk_m, rst_m2, input_flag);
-                        workFrm.Show();
-                    }
-                    this.Close();
+                if (input_flag)
+                {
+                    KeyboardBlocker.on();//解锁键盘
                 }
+
+                WorkFrm workFrm = new WorkFrm(wrk_m, rst_m2, input_flag);
+                workFrm.Show();
+                this.Close();
             }
         }
 

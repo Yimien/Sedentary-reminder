@@ -1,0 +1,19 @@
+d:\workspace\self_projects\Sedentary-reminder\Reminder\bin\Debug\net8.0-windows\Reminder.exe
+d:\workspace\self_projects\Sedentary-reminder\Reminder\bin\Debug\net8.0-windows\Reminder.deps.json
+d:\workspace\self_projects\Sedentary-reminder\Reminder\bin\Debug\net8.0-windows\Reminder.runtimeconfig.json
+d:\workspace\self_projects\Sedentary-reminder\Reminder\bin\Debug\net8.0-windows\Reminder.dll
+d:\workspace\self_projects\Sedentary-reminder\Reminder\bin\Debug\net8.0-windows\Reminder.pdb
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.AboutBox.resources
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.MainFrm.resources
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.Properties.Resources.resources
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.RestFrm.resources
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.WorkFrm.resources
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Sedentary Reminder.csproj.GenerateResource.cache
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Sedentary Reminder.GeneratedMSBuildEditorConfig.editorconfig
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Sedentary Reminder.csproj.CoreCompileInputs.cache
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Sedentary Reminder.sourcelink.json
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.dll
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\refint\Reminder.dll
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Reminder.pdb
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\Sedentary Reminder.genruntimeconfig.cache
+d:\workspace\self_projects\Sedentary-reminder\Reminder\obj\Debug\net8.0-windows\ref\Reminder.dll

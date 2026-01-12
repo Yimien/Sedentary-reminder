@@ -102,13 +102,13 @@
             this.label5.Text = "（分钟）";
             // 
             // label6
-            // 
+            //
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(146, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 15;
-            this.label6.Text = "（分钟）";
+            this.label6.Text = "（秒）";
             // 
             // numWrkTime
             // 
@@ -129,12 +129,17 @@
             0});
             // 
             // numRstTime
-            // 
+            //
             this.numRstTime.BackColor = System.Drawing.Color.White;
             this.numRstTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numRstTime.Location = new System.Drawing.Point(95, 74);
+            this.numRstTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numRstTime.Maximum = new decimal(new int[] {
-            30,
+            600,
             0,
             0,
             0});
@@ -142,7 +147,7 @@
             this.numRstTime.Size = new System.Drawing.Size(51, 21);
             this.numRstTime.TabIndex = 17;
             this.numRstTime.Value = new decimal(new int[] {
-            5,
+            60,
             0,
             0,
             0});

@@ -14,7 +14,7 @@ namespace Reminder
         private int wrk_minutes;//工作时间(分)
         private int wrk_seconds;//工作时间(秒)
         private int wrk_m;
-        private int rst_minutes;//休息时间(分)
+        private int rst_seconds;//休息时间(秒)
         private bool input_flag;//是否选中锁定键盘
         private bool left_flag;//鼠标左键是否点击
         private Point mouseoff;
@@ -23,11 +23,11 @@ namespace Reminder
             InitializeComponent();
         }
         //定义一个构造函数，接受前一个窗体传来的参数
-        public WorkFrm(int wrk_minutes, int rst_minutes,bool input_flag)
+        public WorkFrm(int wrk_minutes, int rst_seconds,bool input_flag)
         {
-            InitializeComponent();           
+            InitializeComponent();
             this.wrk_minutes = wrk_minutes;
-            this.rst_minutes = rst_minutes;
+            this.rst_seconds = rst_seconds;
             //this.input_flag = input_flag;
             this.wrk_m = wrk_minutes;
             this.input_flag = input_flag;
@@ -127,7 +127,7 @@ namespace Reminder
                 {
 
                     this.Close();
-                    RestFrm restFrm = new RestFrm(rst_minutes, wrk_m, input_flag);
+                    RestFrm restFrm = new RestFrm(rst_seconds, wrk_m, input_flag);
                     restFrm.ShowDialog();                   
                 }
             }
