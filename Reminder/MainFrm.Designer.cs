@@ -147,7 +147,7 @@
             this.numRstTime.Size = new System.Drawing.Size(51, 21);
             this.numRstTime.TabIndex = 17;
             this.numRstTime.Value = new decimal(new int[] {
-            60,
+            10,
             0,
             0,
             0});
