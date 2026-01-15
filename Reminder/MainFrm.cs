@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Reminder
 {
@@ -17,6 +18,29 @@ namespace Reminder
             InitializeComponent();
         }
 
+        private static bool IsAutoStartEnabled()
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", false))
+            {
+                return key != null && key.GetValue("Reminder") != null;
+            }
+        }
+
+        private static void SetAutoStart(bool enable)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true))
+            {
+                if (enable)
+                {
+                    key.SetValue("Reminder", Application.ExecutablePath);
+                }
+                else
+                {
+                    key.DeleteValue("Reminder", false);
+                }
+            }
+        }
+
         private void MainFrm_Load(object sender, EventArgs e)
         {
             // Load user settings
@@ -24,6 +48,8 @@ namespace Reminder
             numRstTime.Value = Properties.Settings.Default.RestTime;
             numStandTime.Value = Properties.Settings.Default.StandTime;
             ckBoxInput.Checked = Properties.Settings.Default.BlockInput;
+            ckBoxAutoStart.Checked = IsAutoStartEnabled();
+            ckBoxAutoStart.CheckedChanged += CkBoxAutoStart_CheckedChanged;
         }
        
 
@@ -81,6 +107,11 @@ namespace Reminder
         {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
+        }
+
+        private void CkBoxAutoStart_CheckedChanged(object sender, EventArgs e)
+        {
+            SetAutoStart(ckBoxAutoStart.Checked);
         }
     }
 }

@@ -49,6 +49,7 @@
             exit_ToolStripMenuItem = new ToolStripMenuItem();
             label4 = new Label();
             ckBoxInput = new CheckBox();
+            ckBoxAutoStart = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)numWrkTime).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numRstTime).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numStandTime).BeginInit();
@@ -91,7 +92,7 @@
             btn_start.BackColor = Color.Transparent;
             btn_start.FlatAppearance.BorderColor = Color.DimGray;
             btn_start.FlatStyle = FlatStyle.Flat;
-            btn_start.Location = new Point(79, 199);
+            btn_start.Location = new Point(79, 225);
             btn_start.Margin = new Padding(4);
             btn_start.Name = "btn_start";
             btn_start.Size = new Size(88, 33);
@@ -235,13 +236,25 @@
             ckBoxInput.TabIndex = 19;
             ckBoxInput.Text = "休息时屏蔽键盘和鼠标";
             ckBoxInput.UseVisualStyleBackColor = true;
+            //
+            // ckBoxAutoStart
+            //
+            ckBoxAutoStart.AutoSize = true;
+            ckBoxAutoStart.Location = new Point(34, 195);
+            ckBoxAutoStart.Margin = new Padding(4);
+            ckBoxAutoStart.Name = "ckBoxAutoStart";
+            ckBoxAutoStart.Size = new Size(95, 21);
+            ckBoxAutoStart.TabIndex = 20;
+            ckBoxAutoStart.Text = "开机自启动";
+            ckBoxAutoStart.UseVisualStyleBackColor = true;
             // 
             // MainFrm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(248, 245);
+            ClientSize = new Size(248, 270);
+            Controls.Add(ckBoxAutoStart);
             Controls.Add(ckBoxInput);
             Controls.Add(label4);
             Controls.Add(numRstTime);
@@ -293,6 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox ckBoxInput;
+        private System.Windows.Forms.CheckBox ckBoxAutoStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numStandTime;
         private System.Windows.Forms.Label label8;
