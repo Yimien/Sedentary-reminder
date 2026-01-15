@@ -19,21 +19,24 @@ namespace Reminder
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
-
+            // Load user settings
+            numWrkTime.Value = Properties.Settings.Default.WorkTime;
+            numRstTime.Value = Properties.Settings.Default.RestTime;
+            numStandTime.Value = Properties.Settings.Default.StandTime;
+            ckBoxInput.Checked = Properties.Settings.Default.BlockInput;
         }
        
 
         private void Btn_start_Click(object sender, EventArgs e)
         {
-            bool input_flag;
+            // Save current settings
+            Properties.Settings.Default.WorkTime = (int)this.numWrkTime.Value;
+            Properties.Settings.Default.RestTime = (int)this.numRstTime.Value;
+            Properties.Settings.Default.StandTime = (int)this.numStandTime.Value;
+            Properties.Settings.Default.BlockInput = this.ckBoxInput.Checked;
+            Properties.Settings.Default.Save();
 
-            if (this.ckBoxInput.Checked)
-            {
-                input_flag = true;
-            }
-            else {
-                input_flag = false;
-            }
+            bool input_flag = this.ckBoxInput.Checked;
 
             int wrkTime = (int)this.numWrkTime.Value;
             int rstTime = (int)this.numRstTime.Value;
