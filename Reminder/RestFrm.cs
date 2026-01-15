@@ -122,8 +122,16 @@ namespace Reminder
                     KeyboardBlocker.on();//解锁键盘
                 }
 
-                StandFrm standFrm = new StandFrm(wrk_m, rst_m2, stand_m, input_flag);
-                standFrm.Show();
+                if (stand_m > 0)
+                {
+                    StandFrm standFrm = new StandFrm(wrk_m, rst_m2, stand_m, input_flag);
+                    standFrm.Show();
+                }
+                else
+                {
+                    WorkFrm workFrm = new WorkFrm(wrk_m, rst_m2, stand_m, input_flag);
+                    workFrm.Show();
+                }
                 this.Close();
             }
         }

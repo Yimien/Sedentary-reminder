@@ -127,6 +127,7 @@
             numWrkTime.Location = new Point(122, 35);
             numWrkTime.Margin = new Padding(4);
             numWrkTime.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numWrkTime.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numWrkTime.Name = "numWrkTime";
             numWrkTime.Size = new Size(59, 23);
             numWrkTime.TabIndex = 16;
@@ -162,7 +163,6 @@
             numStandTime.Location = new Point(122, 71);
             numStandTime.Margin = new Padding(4);
             numStandTime.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
-            numStandTime.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numStandTime.Name = "numStandTime";
             numStandTime.Size = new Size(59, 23);
             numStandTime.TabIndex = 21;

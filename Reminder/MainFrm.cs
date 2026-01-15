@@ -13,9 +13,22 @@ namespace Reminder
     public partial class MainFrm : Form
     {
         WorkFrm? wrkFrm;
+        private Button btn_stop;
         public MainFrm()
         {
             InitializeComponent();
+            btn_stop = new Button();
+            btn_stop.BackColor = Color.Transparent;
+            btn_stop.FlatAppearance.BorderColor = Color.DimGray;
+            btn_stop.FlatStyle = FlatStyle.Flat;
+            btn_stop.Location = btn_start.Location;
+            btn_stop.Size = btn_start.Size;
+            btn_stop.Text = "停止";
+            btn_stop.ForeColor = Color.Red;
+            btn_stop.UseVisualStyleBackColor = false;
+            btn_stop.Visible = false;
+            btn_stop.Click += Btn_stop_Click;
+            this.Controls.Add(btn_stop);
         }
 
         private static bool IsAutoStartEnabled()
@@ -44,12 +57,14 @@ namespace Reminder
         private void MainFrm_Load(object sender, EventArgs e)
         {
             // Load user settings
-            numWrkTime.Value = Properties.Settings.Default.WorkTime;
-            numRstTime.Value = Properties.Settings.Default.RestTime;
-            numStandTime.Value = Properties.Settings.Default.StandTime;
+            // Ensure values are within bounds
+            numWrkTime.Value = Math.Max(Properties.Settings.Default.WorkTime, (int)numWrkTime.Minimum);
+            numRstTime.Value = Math.Max(Properties.Settings.Default.RestTime, (int)numRstTime.Minimum);
+            numStandTime.Value = Math.Max(Properties.Settings.Default.StandTime, (int)numStandTime.Minimum);
             ckBoxInput.Checked = Properties.Settings.Default.BlockInput;
             ckBoxAutoStart.Checked = IsAutoStartEnabled();
             ckBoxAutoStart.CheckedChanged += CkBoxAutoStart_CheckedChanged;
+            UpdateButtonVisibility();
         }
        
 
@@ -71,18 +86,52 @@ namespace Reminder
             wrkFrm.Show();
             //MainFrm.Visible = false;
             this.Visible = false;
+            btn_start.Visible = false;
+            btn_stop.Visible = true;
 
         }
 
+        private void Btn_stop_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (form is WorkFrm || form is RestFrm || form is StandFrm)
+                {
+                    form.Close();
+                }
+            }
+            btn_stop.Visible = false;
+            btn_start.Visible = true;
+        }
+
+        private void UpdateButtonVisibility()
+        {
+            bool hasTimerForm = false;
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (form is WorkFrm || form is RestFrm || form is StandFrm)
+                {
+                    hasTimerForm = true;
+                    break;
+                }
+            }
+            if (hasTimerForm)
+            {
+                btn_stop.Visible = true;
+                btn_start.Visible = false;
+            }
+            else
+            {
+                btn_stop.Visible = false;
+                btn_start.Visible = true;
+            }
+        }
+
         private void 主窗体ToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
+        {
             this.Visible = true;
             this.WindowState = FormWindowState.Normal;
-            if (wrkFrm!=null)
-            {
-                wrkFrm.Close();
-            }
-            
+            UpdateButtonVisibility();
 
         }
 
