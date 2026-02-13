@@ -60,10 +60,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 39);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(44, 46);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 17);
+            label1.Size = new Size(114, 20);
             label1.TabIndex = 0;
             label1.Text = "坐姿工作时间：";
             // 
@@ -71,20 +71,20 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("宋体", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label2.Location = new Point(14, 13);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(18, 15);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 14);
+            label2.Size = new Size(84, 18);
             label2.TabIndex = 3;
             label2.Text = "计时器：";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 109);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(44, 128);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(92, 17);
+            label3.Size = new Size(114, 20);
             label3.TabIndex = 5;
             label3.Text = "休息活动时间：";
             // 
@@ -93,10 +93,10 @@
             btn_start.BackColor = Color.Transparent;
             btn_start.FlatAppearance.BorderColor = Color.DimGray;
             btn_start.FlatStyle = FlatStyle.Flat;
-            btn_start.Location = new Point(79, 248);
-            btn_start.Margin = new Padding(4);
+            btn_start.Location = new Point(102, 292);
+            btn_start.Margin = new Padding(5);
             btn_start.Name = "btn_start";
-            btn_start.Size = new Size(88, 33);
+            btn_start.Size = new Size(113, 39);
             btn_start.TabIndex = 11;
             btn_start.Text = "开始";
             btn_start.UseVisualStyleBackColor = false;
@@ -105,32 +105,32 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(180, 40);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(231, 47);
+            label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
-            label5.Size = new Size(56, 17);
+            label5.Size = new Size(69, 20);
             label5.TabIndex = 14;
             label5.Text = "（分钟）";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(180, 110);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(231, 129);
+            label6.Margin = new Padding(5, 0, 5, 0);
             label6.Name = "label6";
-            label6.Size = new Size(44, 17);
+            label6.Size = new Size(54, 20);
             label6.TabIndex = 15;
             label6.Text = "（秒）";
             // 
             // numWrkTime
             // 
             numWrkTime.BorderStyle = BorderStyle.FixedSingle;
-            numWrkTime.Location = new Point(122, 35);
-            numWrkTime.Margin = new Padding(4);
+            numWrkTime.Location = new Point(157, 41);
+            numWrkTime.Margin = new Padding(5);
             numWrkTime.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
             numWrkTime.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numWrkTime.Name = "numWrkTime";
-            numWrkTime.Size = new Size(59, 23);
+            numWrkTime.Size = new Size(76, 27);
             numWrkTime.TabIndex = 16;
             numWrkTime.Value = new decimal(new int[] { 60, 0, 0, 0 });
             // 
@@ -138,22 +138,22 @@
             // 
             numRstTime.BackColor = Color.White;
             numRstTime.BorderStyle = BorderStyle.FixedSingle;
-            numRstTime.Location = new Point(122, 107);
-            numRstTime.Margin = new Padding(4);
+            numRstTime.Location = new Point(157, 126);
+            numRstTime.Margin = new Padding(5);
             numRstTime.Maximum = new decimal(new int[] { 600, 0, 0, 0 });
             numRstTime.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRstTime.Name = "numRstTime";
-            numRstTime.Size = new Size(59, 23);
+            numRstTime.Size = new Size(76, 27);
             numRstTime.TabIndex = 17;
             numRstTime.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(34, 74);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(44, 87);
+            label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
-            label7.Size = new Size(92, 17);
+            label7.Size = new Size(114, 20);
             label7.TabIndex = 20;
             label7.Text = "站立工作时间：";
             // 
@@ -161,56 +161,58 @@
             // 
             numStandTime.BackColor = Color.White;
             numStandTime.BorderStyle = BorderStyle.FixedSingle;
-            numStandTime.Location = new Point(122, 71);
-            numStandTime.Margin = new Padding(4);
+            numStandTime.Location = new Point(157, 84);
+            numStandTime.Margin = new Padding(5);
             numStandTime.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
             numStandTime.Name = "numStandTime";
-            numStandTime.Size = new Size(59, 23);
+            numStandTime.Size = new Size(76, 27);
             numStandTime.TabIndex = 21;
             numStandTime.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(180, 75);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(231, 88);
+            label8.Margin = new Padding(5, 0, 5, 0);
             label8.Name = "label8";
-            label8.Size = new Size(56, 17);
+            label8.Size = new Size(69, 20);
             label8.TabIndex = 22;
             label8.Text = "（分钟）";
             // 
             // notifyIcon1
             // 
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
-            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            //notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Icon = (Icon)resources.GetObject("tray.Icon");
             notifyIcon1.Text = "Reminder";
             notifyIcon1.Visible = true;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.BackgroundImageLayout = ImageLayout.Center;
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { 主窗体ToolStripMenuItem, 关于ToolStripMenuItem, exit_ToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(113, 70);
+            contextMenuStrip1.Size = new Size(124, 76);
             // 
             // 主窗体ToolStripMenuItem
             // 
             主窗体ToolStripMenuItem.Name = "主窗体ToolStripMenuItem";
-            主窗体ToolStripMenuItem.Size = new Size(112, 22);
+            主窗体ToolStripMenuItem.Size = new Size(123, 24);
             主窗体ToolStripMenuItem.Text = "首选项";
             主窗体ToolStripMenuItem.Click += 主窗体ToolStripMenuItem_Click;
             // 
             // 关于ToolStripMenuItem
             // 
             关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            关于ToolStripMenuItem.Size = new Size(112, 22);
+            关于ToolStripMenuItem.Size = new Size(123, 24);
             关于ToolStripMenuItem.Text = "关于";
             关于ToolStripMenuItem.Click += 关于ToolStripMenuItem_Click;
             // 
             // exit_ToolStripMenuItem
             // 
             exit_ToolStripMenuItem.Name = "exit_ToolStripMenuItem";
-            exit_ToolStripMenuItem.Size = new Size(112, 22);
+            exit_ToolStripMenuItem.Size = new Size(123, 24);
             exit_ToolStripMenuItem.Text = "退出";
             exit_ToolStripMenuItem.Click += 退出ToolStripMenuItem_Click;
             // 
@@ -218,10 +220,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("宋体", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label4.Location = new Point(14, 139);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(18, 164);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(52, 14);
+            label4.Size = new Size(65, 18);
             label4.TabIndex = 18;
             label4.Text = "选项：";
             // 
@@ -230,10 +232,10 @@
             ckBoxInput.AutoSize = true;
             ckBoxInput.Checked = true;
             ckBoxInput.CheckState = CheckState.Checked;
-            ckBoxInput.Location = new Point(34, 163);
-            ckBoxInput.Margin = new Padding(4);
+            ckBoxInput.Location = new Point(44, 192);
+            ckBoxInput.Margin = new Padding(5);
             ckBoxInput.Name = "ckBoxInput";
-            ckBoxInput.Size = new Size(147, 21);
+            ckBoxInput.Size = new Size(181, 24);
             ckBoxInput.TabIndex = 19;
             ckBoxInput.Text = "休息时屏蔽键盘和鼠标";
             ckBoxInput.UseVisualStyleBackColor = true;
@@ -241,10 +243,10 @@
             // ckBoxAutoStart
             // 
             ckBoxAutoStart.AutoSize = true;
-            ckBoxAutoStart.Location = new Point(34, 219);
-            ckBoxAutoStart.Margin = new Padding(4);
+            ckBoxAutoStart.Location = new Point(44, 258);
+            ckBoxAutoStart.Margin = new Padding(5);
             ckBoxAutoStart.Name = "ckBoxAutoStart";
-            ckBoxAutoStart.Size = new Size(87, 21);
+            ckBoxAutoStart.Size = new Size(106, 24);
             ckBoxAutoStart.TabIndex = 20;
             ckBoxAutoStart.Text = "开机自启动";
             ckBoxAutoStart.UseVisualStyleBackColor = true;
@@ -252,20 +254,20 @@
             // ckBoxStrongReminder
             // 
             ckBoxStrongReminder.AutoSize = true;
-            ckBoxStrongReminder.Location = new Point(34, 191);
-            ckBoxStrongReminder.Margin = new Padding(4);
+            ckBoxStrongReminder.Location = new Point(44, 225);
+            ckBoxStrongReminder.Margin = new Padding(5);
             ckBoxStrongReminder.Name = "ckBoxStrongReminder";
-            ckBoxStrongReminder.Size = new Size(87, 21);
+            ckBoxStrongReminder.Size = new Size(106, 24);
             ckBoxStrongReminder.TabIndex = 21;
             ckBoxStrongReminder.Text = "启用强提醒";
             ckBoxStrongReminder.UseVisualStyleBackColor = true;
             // 
             // MainFrm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(248, 288);
+            ClientSize = new Size(319, 339);
             Controls.Add(ckBoxStrongReminder);
             Controls.Add(ckBoxAutoStart);
             Controls.Add(ckBoxInput);
@@ -282,7 +284,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(4);
+            Margin = new Padding(5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "MainFrm";
