@@ -29,6 +29,8 @@ namespace Reminder
             btn_stop.Visible = false;
             btn_stop.Click += Btn_stop_Click;
             this.Controls.Add(btn_stop);
+            // 单击托盘图标打开首选项
+            notifyIcon1.MouseClick += NotifyIcon1_MouseClick;
         }
 
         private static bool IsAutoStartEnabled()
@@ -164,6 +166,19 @@ namespace Reminder
         private void CkBoxAutoStart_CheckedChanged(object sender, EventArgs e)
         {
             SetAutoStart(ckBoxAutoStart.Checked);
+        }
+
+        private void NotifyIcon1_MouseClick(object? sender, MouseEventArgs e)
+        {
+            // 响应左键单击，显示主窗体（首选项）
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.Activate();
+                UpdateButtonVisibility();
+            }
         }
     }
 }
